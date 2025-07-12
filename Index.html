@@ -57,7 +57,9 @@
             color: var(--accent-gold);
             text-decoration: none;
             letter-spacing: 2px;
-            /* Enhanced: Constant animation for the logo text-shadow */
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+            transition: color 0.3s ease;
+            /* New: Constant animation for the logo text-shadow */
             animation: subtle-logo-pulse 3s ease-in-out infinite alternate;
         }
 
@@ -654,7 +656,7 @@
 <body>
     <header>
         <div class="container">
-            <a href="#" class="logo">Lewis Fashion Boutique</a>
+            <a href="#" class="logo">Loop AI Fashion</a>
             <nav>
                 <ul>
                     <li><a href="#collection">Collection</a></li>
@@ -707,7 +709,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Team CMD submission. All rights reserved.</p>
+            <p>&copy; 2025 Loop AI Fashion. All rights reserved.</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -765,7 +767,8 @@
                 name: 'The Midnight Blazer',
                 category: 'tops',
                 price: 120.00,
-                image: 'https://placehold.co/600x800/111/FFD700?text=Blazer',
+                // Image from Unsplash: https://unsplash.com/photos/a-woman-wearing-a-black-suit-and-a-white-shirt-hC3V53a-g_M
+                image: 'https://images.unsplash.com/photo-1601037813879-519213197022?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 description: 'A sleek, tailored blazer in deep black, perfect for a sophisticated evening look. Made from premium, breathable fabric.'
             },
             {
@@ -773,7 +776,8 @@
                 name: 'Golden Hour Dress',
                 category: 'dresses',
                 price: 95.00,
-                image: 'https://placehold.co/600x800/111/FFD700?text=Dress',
+                // Image from Unsplash: https://unsplash.com/photos/woman-wearing-black-dress-standing-on-brown-surface-o0Yd_9_8_0o
+                image: 'https://images.unsplash.com/photo-1596700755582-7e9b049d1e4c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 description: 'Flowy midi dress in a radiant gold hue, designed to catch the light. Ideal for special occasions or a vibrant casual statement.'
             },
             {
@@ -781,7 +785,8 @@
                 name: 'Urban Cargo Pants',
                 category: 'bottoms',
                 price: 75.00,
-                image: 'https://placehold.co/600x800/111/FFD700?text=Pants',
+                // Image from Unsplash: https://unsplash.com/photos/man-in-black-jacket-and-black-pants-sitting-on-brown-wooden-bench-v2aKVDx7-2w
+                image: 'https://images.unsplash.com/photo-1593032463996-267923419089?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 description: 'Comfortable yet stylish cargo pants in a versatile black, featuring multiple pockets for urban utility. Relaxed fit.'
             },
             {
@@ -789,7 +794,8 @@
                 name: 'Eclipse Earrings',
                 category: 'accessories',
                 price: 35.00,
-                image: 'https://placehold.co/600x800/111/FFD700?text=Earrings',
+                // Image from Unsplash: https://unsplash.com/photos/a-close-up-of-a-person-wearing-a-gold-earring-F8uM0238M_k
+                image: 'https://images.unsplash.com/photo-1601037706056-b7470f1a942b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 description: 'Elegant gold-plated hoop earrings with a subtle black enamel detail, perfect for adding a touch of class.'
             },
             {
@@ -797,7 +803,8 @@
                 name: 'Silk Twilight Scarf',
                 category: 'accessories',
                 price: 50.00,
-                image: 'https://placehold.co/600x800/111/FFD700?text=Scarf',
+                // Image from Unsplash: https://unsplash.com/photos/a-person-wearing-a-silk-scarf-f-p1yR-74o
+                image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 description: 'Luxurious silk scarf blending shades of black and gold, versatile for any outfit. Hand-finished edges.'
             },
             {
@@ -805,7 +812,8 @@
                 name: 'The Luxe Tee',
                 category: 'tops',
                 price: 45.00,
-                image: 'https://placehold.co/600x800/111/FFD700?text=Tee',
+                // Image from Unsplash: https://unsplash.com/photos/a-person-wearing-a-black-t-shirt-and-jeans-Yg89sF79u_w
+                image: 'https://images.unsplash.com/photo-1621961458348-f013d239c612?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 description: 'A premium black cotton tee with a minimalist design, offering ultimate comfort and effortless style.'
             },
             {
@@ -813,7 +821,8 @@
                 name: 'Noir Pleated Skirt',
                 category: 'bottoms',
                 price: 85.00,
-                image: 'https://placehold.co/600x800/111/FFD700?text=Skirt',
+                // Image from Unsplash: https://unsplash.com/photos/a-woman-wearing-a-black-pleated-skirt-and-boots-QoP-1l00r0Y
+                image: 'https://images.unsplash.com/photo-1616557670356-834c7a022416?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 description: 'A chic black pleated midi skirt that moves beautifully with every step. Features a comfortable elastic waistband.'
             },
             {
@@ -821,7 +830,8 @@
                 name: 'Starlight Gown',
                 category: 'dresses',
                 price: 180.00,
-                image: 'https://placehold.co/600x800/111/FFD700?text=Gown',
+                // Image from Unsplash: https://unsplash.com/photos/a-woman-in-a-black-dress-is-standing-in-a-dark-room-X0q0P2Wp3Sg
+                image: 'https://images.unsplash.com/photo-1587843058097-3f8202577717?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 description: 'An exquisite floor-length gown in shimmering black, adorned with subtle gold accents that evoke a starry night.'
             }
         ];
