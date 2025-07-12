@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lewis Fashion boutique</title>
+    <title>Loop AI Fashion - Elevate Your Style</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* Color Palette */
@@ -403,6 +403,83 @@
             margin-top: 15px;
         }
 
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--dark-grey);
+            text-align: center;
+        }
+
+        .contact-section .section-title {
+            color: var(--accent-gold);
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--primary-black);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .contact-form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--light-grey);
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 20px); /* Account for padding */
+            padding: 12px 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--dark-grey);
+            border-radius: 5px;
+            background-color: var(--primary-black);
+            color: var(--white);
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-gold);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: var(--accent-gold);
+            color: var(--primary-black);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: var(--white);
+            color: var(--primary-black);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+        }
+
         /* Footer */
         footer {
             background-color: var(--dark-grey);
@@ -510,6 +587,10 @@
             .modal-details p {
                 font-size: 1rem;
             }
+
+            .contact-form {
+                padding: 25px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -536,7 +617,7 @@
 <body>
     <header>
         <div class="container">
-            <a href="#" class="logo">Lewis Fashion boutique</a>
+            <a href="#" class="logo">Loop AI Fashion</a>
             <nav>
                 <ul>
                     <li><a href="#collection">Collection</a></li>
@@ -585,11 +666,34 @@
                 </div>
             </div>
         </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    <p>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </p>
+                    <p>
+                        <button type="submit">Send Message</button>
+                    </p>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Team CMD submission. All rights reserved.</p>
+            <p>&copy; 2025 Loop AI Fashion. All rights reserved.</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
