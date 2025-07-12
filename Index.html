@@ -306,7 +306,7 @@
             margin-bottom: 10px;
         }
 
-        /* Modal (Interactive Lookbook) */
+        /* Modals (General Styling for both Product and Contact) */
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -330,12 +330,17 @@
             border: 1px solid var(--accent-gold);
             border-radius: 15px;
             width: 90%;
-            max-width: 900px;
+            max-width: 900px; /* Max width for product modal */
             box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
             position: relative;
             display: flex;
             flex-direction: column;
             animation: slideInFromTop 0.4s ease-out;
+        }
+
+        /* Specific max-width for contact modal */
+        #contactModal .modal-content {
+            max-width: 600px;
         }
 
         @keyframes fadeIn {
@@ -365,6 +370,7 @@
             transform: rotate(90deg);
         }
 
+        /* Product Modal Specifics */
         .modal-body {
             display: flex;
             flex-direction: column;
@@ -403,29 +409,23 @@
             margin-top: 15px;
         }
 
-        /* Contact Section */
-        .contact-section {
-            padding: 80px 0;
-            background-color: var(--dark-grey);
+        /* Contact Form within Modal Styling */
+        .contact-form-modal-content { /* Applied to the modal-content div for contact form */
             text-align: center;
         }
 
-        .contact-section .section-title {
+        .contact-form-modal-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             color: var(--accent-gold);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: var(--primary-black);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-            border: 1px solid var(--accent-gold);
+        .contact-form-modal-content form p {
+            margin-bottom: 20px;
         }
 
-        .contact-form label {
+        .contact-form-modal-content label {
             display: block;
             text-align: left;
             margin-bottom: 8px;
@@ -433,12 +433,11 @@
             color: var(--light-grey);
         }
 
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
+        .contact-form-modal-content input[type="text"],
+        .contact-form-modal-content input[type="email"],
+        .contact-form-modal-content textarea {
             width: calc(100% - 20px); /* Account for padding */
             padding: 12px 10px;
-            margin-bottom: 20px;
             border: 1px solid var(--dark-grey);
             border-radius: 5px;
             background-color: var(--primary-black);
@@ -447,20 +446,20 @@
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .contact-form input[type="text"]:focus,
-        .contact-form input[type="email"]:focus,
-        .contact-form textarea:focus {
+        .contact-form-modal-content input[type="text"]:focus,
+        .contact-form-modal-content input[type="email"]:focus,
+        .contact-form-modal-content textarea:focus {
             border-color: var(--accent-gold);
             outline: none;
             box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
         }
 
-        .contact-form textarea {
+        .contact-form-modal-content textarea {
             resize: vertical;
             min-height: 120px;
         }
 
-        .contact-form button[type="submit"] {
+        .contact-form-modal-content button[type="submit"] {
             background-color: var(--accent-gold);
             color: var(--primary-black);
             padding: 15px 30px;
@@ -473,12 +472,13 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
-        .contact-form button[type="submit"]:hover {
+        .contact-form-modal-content button[type="submit"]:hover {
             background-color: var(--white);
             color: var(--primary-black);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
         }
+
 
         /* Footer */
         footer {
@@ -588,7 +588,7 @@
                 font-size: 1rem;
             }
 
-            .contact-form {
+            .contact-form-modal-content {
                 padding: 25px;
             }
         }
@@ -622,7 +622,7 @@
                 <ul>
                     <li><a href="#collection">Collection</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a id="openContactModalLink" href="#">Contact</a></li> <!-- Changed to open modal -->
                 </ul>
             </nav>
         </div>
@@ -666,29 +666,6 @@
                 </div>
             </div>
         </section>
-
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title">Get in Touch</h2>
-                <form name="contact" method="POST" data-netlify="true" class="contact-form">
-                    <p>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </p>
-                    <p>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </p>
-                    <p>
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </p>
-                    <p>
-                        <button type="submit">Send Message</button>
-                    </p>
-                </form>
-            </div>
-        </section>
     </main>
 
     <footer>
@@ -699,13 +676,14 @@
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
             </div>
+            <p><a id="openContactModalLinkFooter" href="#" style="color: var(--light-grey); text-decoration: none; transition: color 0.3s ease;">Contact Us</a></p> <!-- Changed to open modal -->
         </div>
     </footer>
 
     <!-- Product Details Modal -->
     <div id="productModal" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button" id="closeProductModalButton">&times;</span>
             <div class="modal-body">
                 <img id="modalImage" src="" alt="Product Image" class="modal-image">
                 <div class="modal-details">
@@ -714,6 +692,31 @@
                     <p class="modal-price" id="modalPrice"></p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content contact-form-modal-content">
+            <span class="close-button" id="closeContactModalButton">&times;</span>
+            <h2 class="section-title">Get in Touch</h2>
+            <form name="contact" method="POST" data-netlify="true">
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </p>
+                <p>
+                    <button type="submit">Send Message</button>
+                </p>
+            </form>
         </div>
     </div>
 
@@ -792,12 +795,19 @@
         const filterButtons = document.querySelectorAll('.filter-buttons button');
         const sortSelect = document.getElementById('sort');
 
+        // Product Modal Elements
         const productModal = document.getElementById('productModal');
-        const closeButton = document.querySelector('.close-button');
+        const closeProductModalButton = document.getElementById('closeProductModalButton');
         const modalImage = document.getElementById('modalImage');
         const modalName = document.getElementById('modalName');
         const modalDescription = document.getElementById('modalDescription');
         const modalPrice = document.getElementById('modalPrice');
+
+        // Contact Modal Elements
+        const contactModal = document.getElementById('contactModal');
+        const closeContactModalButton = document.getElementById('closeContactModalButton');
+        const openContactModalLink = document.getElementById('openContactModalLink'); // Header link
+        const openContactModalLinkFooter = document.getElementById('openContactModalLinkFooter'); // Footer link
 
         // Function to render products
         function renderProducts(productsToRender) {
@@ -817,7 +827,7 @@
                         <p class="product-price">$${product.price.toFixed(2)}</p>
                     </div>
                 `;
-                // Add click listener to open modal
+                // Add click listener to open product modal
                 productCard.addEventListener('click', () => openProductModal(product));
                 productGrid.appendChild(productCard);
             });
@@ -879,7 +889,7 @@
             sortProducts(e.target.value);
         });
 
-        // Modal Functions
+        // Product Modal Functions
         function openProductModal(product) {
             modalImage.src = product.image;
             modalImage.alt = product.name;
@@ -893,12 +903,30 @@
             productModal.style.display = 'none';
         }
 
-        closeButton.addEventListener('click', closeProductModal);
+        closeProductModalButton.addEventListener('click', closeProductModal);
 
-        // Close modal if user clicks outside of it
+        // Contact Modal Functions
+        function openContactModal(event) {
+            event.preventDefault(); // Prevent default link behavior (scrolling)
+            contactModal.style.display = 'flex';
+        }
+
+        function closeContactModal() {
+            contactModal.style.display = 'none';
+        }
+
+        closeContactModalButton.addEventListener('click', closeContactModal);
+        openContactModalLink.addEventListener('click', openContactModal);
+        openContactModalLinkFooter.addEventListener('click', openContactModal);
+
+
+        // Close any modal if user clicks outside of it
         window.addEventListener('click', (event) => {
             if (event.target === productModal) {
                 closeProductModal();
+            }
+            if (event.target === contactModal) {
+                closeContactModal();
             }
         });
 
